@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SweetiesShop — Sweatiies</title>
+  <meta name="description" content="SweetiesShop — koleksi sweater Sweatiies baby pink & baby blue.">
+  <link rel="icon" href="assets/svg/logo.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="header-inner container">
+      <a class="brand" href="#top" aria-label="Beranda SweetiesShop">
+        <img src="assets/svg/logo.svg" alt="Logo SweetiesShop">
+        <span>SweetiesShop</span>
+      </a>
+      <nav class="nav" aria-label="Navigasi utama">
+        <a href="#terlaris">Terlaris</a>
+        <a href="#katalog">Katalog</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#kontak">Kritik & Saran</a>
+      </nav>
+      <button id="open-cart" class="cart-btn" aria-label="Buka keranjang">
+        Keranjang
+        <span class="badge" aria-live="polite">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <span class="badge-pill">Sweatiies — Korea Vibes</span>
+        <h1>Tampil Manis dengan Baby Pink & Baby Blue</h1>
+        <p>Material lembut & ringan. Cocok untuk hangout, kuliah, atau WFH.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#katalog">Lihat Katalog</a>
+          <a class="btn btn-outline" href="#testimoni">Baca Testimoni</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="terlaris" class="section container" aria-label="Produk terlaris">
+      <h2>Produk Terlaris</h2>
+      <div class="slider" role="region" aria-roledescription="carousel">
+        <div class="slider-track"></div>
+        <div class="slider-controls">
+          <button id="prev" aria-label="Sebelumnya">◀</button>
+          <button id="next" aria-label="Berikutnya">▶</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="katalog" class="section container" aria-label="Katalog produk">
+      <h2>Katalog</h2>
+      <div id="products" class="grid"></div>
+    </section>
+
+    <section id="testimoni" class="section container" aria-label="Testimoni pelanggan">
+      <h2>Testimoni Pelanggan</h2>
+      <div id="testimonials" class="testimonials" aria-live="polite"></div>
+
+      <div class="form" style="margin-top:1rem">
+        <h3>Tambah Testimoni</h3>
+        <form id="t-form">
+          <div class="row">
+            <div>
+              <label for="t-name">Nama</label>
+              <input id="t-name" name="name" placeholder="Namamu">
+            </div>
+            <div>
+              <label for="t-rating">Rating</label>
+              <select id="t-rating" name="rating">
+                <option value="5">★★★★★ (5)</option>
+                <option value="4">★★★★☆ (4)</option>
+                <option value="3">★★★☆☆ (3)</option>
+                <option value="2">★★☆☆☆ (2)</option>
+                <option value="1">★☆☆☆☆ (1)</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="t-text">Testimoni</label>
+            <textarea id="t-text" name="text" placeholder="Ceritakan pengalamanmu..."></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Kirim Testimoni</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="kontak" class="section container" aria-label="Kritik dan saran">
+      <h2>Kritik & Saran + Alamat Toko</h2>
+      <div class="grid" style="grid-template-columns:1.2fr .8fr;">
+        <div class="form">
+          <form id="f-form">
+            <div class="row">
+              <div>
+                <label for="f-name">Nama</label>
+                <input id="f-name" name="name" placeholder="Namamu">
+              </div>
+              <div>
+                <label for="f-email">Email (opsional)</label>
+                <input id="f-email" name="email" type="email" placeholder="email@contoh.com">
+              </div>
+            </div>
+            <div>
+              <label for="f-message">Pesan</label>
+              <textarea id="f-message" name="message" placeholder="Tulis kritik/saran di sini..."></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Kirim</button>
+          </form>
+        </div>
+        <div>
+          <div class="form">
+            <strong>Alamat Toko</strong>
+            <p class="address">jalanjangangamonterus rt 01 no19</p>
+            <div class="map" aria-label="Map menuju toko">
+              <iframe title="Map Toko" width="100%" height="100%" style="border:0" loading="lazy"
+                src="https://www.google.com/maps?q=jalanjangangamonterus%20rt%2001%20no19&output=embed"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container cols">
+      <div>
+        <strong>SweetiesShop — Sweatiies</strong>
+        <p>IG: @sweetiesshop • TikTok: @sweetiesshop</p>
+      </div>
+      <div>
+        <strong>Jam Buka</strong>
+        <p>Senin–Sabtu 09.00–18.00 WIB</p>
+      </div>
+    </div>
+    <p class="container" style="margin-top:.6rem;">© <span id="year"></span> SweetiesShop. All rights reserved.</p>
+  </footer>
+
+  <dialog id="cart" style="border:none;border-radius:16px;max-width:720px;width:92%;padding:0;">
+    <div style="padding:1rem;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;justify-content:space-between">
+      <strong>Keranjang Belanja</strong>
+      <button id="close-cart" aria-label="Tutup">✕</button>
+    </div>
+    <div id="cart-items" style="padding:1rem"></div>
+    <div style="padding:1rem;border-top:1px solid #e5e7eb;display:flex;align-items:center;justify-content:space-between">
+      <div>Total: <strong id="cart-total">Rp0</strong></div>
+      <button id="checkout" class="btn btn-primary">Checkout</button>
+    </div>
+  </dialog>
+
+  <div id="toast" style="position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#111827;color:#fff;padding:.6rem .9rem;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.2);opacity:0;transition:opacity .25s;z-index:50">...</div>
+  <script>
+    (function(){
+      const t=document.getElementById('toast');
+      const o=new MutationObserver(()=>{ t.style.opacity=t.classList.contains('show')?1:0; });
+      o.observe(t,{attributes:true});
+      document.getElementById('year').textContent=new Date().getFullYear();
+    })();
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>
